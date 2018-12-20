@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <link href="css/swiper.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/videre.css" rel="stylesheet" />
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="js/swiper.min.js" type="text/javascript" ></script>
+    <script src="js/videre.js"></script>
+    <script src="js/main.js" type="text/javascript" ></script>
+
+</head>
+<body>
+
+<div class="video-wrapper">
+    <h2 class="video-caption">Видео</h2>
+
+    <div class="video__container">
+
+        <span class="video-btn prev swiper-button-prev"></span>
+        <span class="video-btn next swiper-button-next"></span>
+
+        <section class="video-list-wrapper swiper-container">
+            <ul class="video-list swiper-wrapper">
+                <li class="video-item swiper-slide">
+                    <video class="video-item" src="template/video/test.mp4" muted></video>
+                    <div class="video-item-wrapper">
+                        <span class="video-item-play play-video" data-video="template/video/test.mp4"></span>
+                        <h3 class="video-item-caption">MITCH LIVE</h3>
+                        <p class="video-item-text">Искусство в бургерном деле мы доведем  до абсолюта, ведь за кухню отвечают шеф-повара MITRICH steakhouse Сергей Виноградов и Дмитрий Дмитриенко. </p>
+                    </div>
+                    <span class="video-item-play--mobil play-video" data-video="template/video/test.mp4"></span>
+                </li>
+                <li class="video-item swiper-slide">
+                    <video class="video-item" src="template/video/test.mp4" muted></video>
+                    <div class="video-item-wrapper">
+                        <span class="video-item-play play-video" data-video="template/video/test.mp4"></span>
+                        <h3 class="video-item-caption">MITCH LIVE</h3>
+                        <p class="video-item-text">Искусство в бургерном деле мы доведем  до абсолюта, ведь за кухню отвечают шеф-повара MITRICH steakhouse Сергей Виноградов и Дмитрий Дмитриенко. </p>
+                    </div>
+                    <span class="video-item-play--mobil play-video" data-video="template/video/test.mp4"></span>
+                </li>
+                <li class="video-item swiper-slide">
+                    <video class="video-item" src="template/video/test.mp4" muted></video>
+                    <div class="video-item-wrapper">
+                        <span class="video-item-play play-video" data-video="template/video/test.mp4"></span>
+                        <h3 class="video-item-caption">MITCH LIVE</h3>
+                        <p class="video-item-text">Искусство в бургерном деле мы доведем  до абсолюта, ведь за кухню отвечают шеф-повара MITRICH steakhouse Сергей Виноградов и Дмитрий Дмитриенко. </p>
+                    </div>
+                    <span class="video-item-play--mobil play-video" data-video="template/video/test.mp4"></span>
+                </li>
+            </ul>
+        </section>
+
+        <div class="video-scroll swiper-scrollbar"></div>
+
+    </div>
+
+    <div class="video__overlay"><div id="player"></div><span class="video-close"></span></div>
+
+</div>
+
+</body>
+</html>
