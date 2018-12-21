@@ -27,10 +27,15 @@
       max-width: 1200px; } }
   @media screen and (min-width: 1024px) and (max-width: 1279px) {
     .video-wrapper {
-      max-width: 945px; } }
+      max-width: 945px;
+      margin: 0 auto 120px; } }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .video-wrapper {
-      max-width: 690px; } }
+      max-width: 690px;
+      margin: 0 auto 120px; } }
+  @media screen and (max-width: 767px) {
+    .video-wrapper {
+      margin: 0 auto 80px; } }
   .video-wrapper h2.video-caption {
     cursor: default;
     margin-bottom: 145px; }
@@ -64,6 +69,9 @@
     .video__container .video-list-wrapper .video-list {
       list-style: none;
       margin-bottom: 100px; }
+      @media screen and (max-width: 767px) {
+        .video__container .video-list-wrapper .video-list {
+          margin-bottom: 70px; } }
       .video__container .video-list-wrapper .video-list .video-item {
         width: 735px;
         height: 415px;
@@ -82,12 +90,17 @@
           .video__container .video-list-wrapper .video-list .video-item {
             width: 450px;
             height: 315px; } }
-        @media screen and (max-width: 1023px) {
+        @media screen and (min-width: 512px) and (max-width: 1023px) {
           .video__container .video-list-wrapper .video-list .video-item {
-            width: 100%; } }
+            width: 100%;
+            height: 315px; } }
+        @media screen and (max-width: 511px) {
+          .video__container .video-list-wrapper .video-list .video-item {
+            width: 100%;
+            height: 215px; } }
         .video__container .video-list-wrapper .video-list .video-item:last-child {
           margin-right: 0; }
-        .video__container .video-list-wrapper .video-list .video-item .video-item {
+        .video__container .video-list-wrapper .video-list .video-item .video {
           width: 100%;
           height: auto;
           min-height: 100%;
@@ -106,6 +119,7 @@
               display: none; } }
         .video__container .video-list-wrapper .video-list .video-item .video-item-wrapper {
           position: absolute;
+          display: none;
           top: 0;
           left: 0;
           width: 100%;
@@ -149,10 +163,11 @@
               border: 15px solid transparent;
               border-left: 25px solid #FFFFFF; }
           .video__container .video-list-wrapper .video-list .video-item .video-item-wrapper .video-item-caption {
-            font-family: Tenor Sans, sans-serif;
+            font-family: 'tenor', sans-serif;
             font-style: normal;
             font-weight: normal;
             line-height: normal;
+            text-align: left !important;
             font-size: 36px;
             text-transform: uppercase;
             color: #FFFFFF;
@@ -200,6 +215,9 @@
     .video__container .video-scroll .swiper-scrollbar-drag {
       background: #FF0000;
       cursor: pointer; }
+    @media screen and (max-width: 767px) {
+      .video__container .video-scroll {
+        display: none; } }
   .video__container .swiper-button-prev,
   .video__container .swiper-button-next {
     top: 178px;
@@ -215,17 +233,28 @@
       .video__container .swiper-button-prev,
       .video__container .swiper-button-next {
         top: 140px; } }
-    @media screen and (max-width: 1279px) {
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
       .video__container .swiper-button-prev,
       .video__container .swiper-button-next {
         top: auto;
         bottom: 28px; } }
+    @media screen and (max-width: 767px) {
+      .video__container .swiper-button-prev,
+      .video__container .swiper-button-next {
+        top: auto;
+        bottom: 3px; } }
   .video__container .swiper-button-prev {
-    background: url("../template/img/svg/arrow-left.svg") no-repeat center;
+    background: url("../img/svg/arrow-left.svg") no-repeat center;
     background-size: cover; }
+    @media screen and (max-width: 767px) {
+      .video__container .swiper-button-prev {
+        background-size: 50%; } }
   .video__container .swiper-button-next {
-    background: url("../template/img/svg/arrow-right.svg") no-repeat center;
+    background: url("../img/svg/arrow-right.svg") no-repeat center;
     background-size: cover; }
+    @media screen and (max-width: 767px) {
+      .video__container .swiper-button-next {
+        background-size: 50%; } }
 
 .video__overlay {
   position: fixed;
@@ -249,12 +278,12 @@
   .video__overlay .video-close {
     position: absolute;
     width: 40px;
-    height: 40px;
+    height: 50vh;
     display: block;
     right: 30px;
     top: 30px;
-    background: #000000 url("../template/img/svg/cancel.svg") no-repeat center;
-    background-size: 50%;
+    background: url("../img/svg/cancel.svg") no-repeat 10px 10px;
+    background-size: 20px 20px;
     opacity: 0;
     -webkit-transition: all 550ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     -o-transition: all 550ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
@@ -269,7 +298,35 @@
   .video__overlay .vid-play-btn {
     width: 40px;
     height: 20px;
-    background: url("../template/img/svg/pause.svg") no-repeat center;
+    background: url("../img/svg/pause.svg") no-repeat center;
     background-size: auto 100%; }
+
+.vid-quality-selector,
+.vid-quality-selector button {
+  display: none; }
+
+.main-info h1 {
+  font-size: 28px; }
+
+.vid-wrapper .vid-html5 video {
+  max-width: 100%; }
+
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider-container,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-full-page-media::-webkit-media-controls-panel,
+video::-webkit-media-controls-timeline-container,
+video::-webkit-media-controls-time-remaining-display,
+video::-webkit-media-controls-seek-back-button,
+video::-webkit-media-controls-seek-forward-button,
+video::-webkit-media-controls-fullscreen-button,
+video::-webkit-media-controls-rewind-button,
+video::-webkit-media-controls-return-to-realtime-button,
+video::-webkit-media-controls-toggle-closed-captions-button {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

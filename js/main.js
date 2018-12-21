@@ -48,7 +48,7 @@ $(document).ready(function () {
                     ],
                     title: $(this).closest('.video-item').find('.video-item-caption').text()
                 },
-                dimensions: $(window).width()
+                dimensions: 1920
             });
         });
 
