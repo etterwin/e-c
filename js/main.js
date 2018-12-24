@@ -28,9 +28,10 @@ $(document).ready(function () {
         .on('click', function () {
             let videoPath = $(this).data('video');
 
-            $('.video__overlay').addClass('active')
+            $('.video__overlay').addClass('active');
+            $('#player').append('<video src="' + videoPath + '" autoplay></video>');
 
-            $('#player').videre({
+                /*$('#player').videre({
                 video: {
                     quality: [
                         {
@@ -49,12 +50,22 @@ $(document).ready(function () {
                     title: $(this).closest('.video-item').find('.video-item-caption').text()
                 },
                 dimensions: 1920
-            });
+            });*/
         });
-
 
     $('.video-close').on('click', function () {
         $('.video__overlay').removeClass('active');
         $('#player').empty().removeAttr('class');
     });
+
+    $('#player').on('click', function () {
+        $(this).toggleClass('paused');
+        if ($(this).hasClass('paused')) {
+            $(this).find('video').get(0).pause();
+        }
+        else {
+            $(this).find('video').get(0).play();
+        }
+    });
+
 });

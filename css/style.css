@@ -271,8 +271,21 @@
     pointer-events: all;
     visibility: visible;
     opacity: 1; }
+  .video__overlay #player {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
+    cursor: pointer; }
   .video__overlay video {
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: auto;
+    height: 100vh;
+    max-width: 100%; }
   .video__overlay .vid-request-fullscreen {
     display: none; }
   .video__overlay .video-close {
@@ -284,7 +297,6 @@
     top: 30px;
     background: url("../img/svg/cancel.svg") no-repeat 10px 10px;
     background-size: 20px 20px;
-    opacity: 0;
     -webkit-transition: all 550ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     -o-transition: all 550ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     transition: all 550ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
@@ -300,6 +312,30 @@
     height: 20px;
     background: url("../img/svg/pause.svg") no-repeat center;
     background-size: auto 100%; }
+  .video__overlay .video-pause {
+    position: absolute;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    left: calc(50% - 20px);
+    top: calc(50% - 20px);
+    cursor: default;
+    pointer-events: none;
+    background: url("../img/svg/pause.svg") no-repeat center;
+    background-size: 50%;
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out; }
+
+#player.paused ~ .video-pause {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
 
 .vid-quality-selector,
 .vid-quality-selector button {
@@ -310,23 +346,5 @@
 
 .vid-wrapper .vid-html5 video {
   max-width: 100%; }
-
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-volume-slider-container,
-video::-webkit-media-controls-volume-slider,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-current-time-display,
-video::-webkit-full-page-media::-webkit-media-controls-panel,
-video::-webkit-media-controls-timeline-container,
-video::-webkit-media-controls-time-remaining-display,
-video::-webkit-media-controls-seek-back-button,
-video::-webkit-media-controls-seek-forward-button,
-video::-webkit-media-controls-fullscreen-button,
-video::-webkit-media-controls-rewind-button,
-video::-webkit-media-controls-return-to-realtime-button,
-video::-webkit-media-controls-toggle-closed-captions-button {
-  display: none; }
 
 /*# sourceMappingURL=style.css.map */
